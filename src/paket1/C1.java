@@ -45,9 +45,9 @@ public class C1 {
                 int tutar = scan.nextInt();
                 if (bakiye >= tutar) {
                     System.out.println("işlem başarıyla gerçekleştirildi mevcut bakiye" + (bakiye - tutar));
-                    devam = true;
+
                 } else System.out.println("bu işlemi yapmak için yeterli bakiye yoktur");
-                devam = true;
+
             }
             if (işlem == 4) {
                 System.out.println("lutfen göndermek ıstedıgınız tutarı gırınız");
@@ -61,7 +61,7 @@ public class C1 {
                 }
                 else if(bakiye< tutar) {
                     System.out.println("bu işlemi yapmak için yeterli bakiye yoktur");
-                    devam = true;
+
                 }
 
 
@@ -73,10 +73,19 @@ public class C1 {
                 if(eskişifre.equalsIgnoreCase(şifre)){
                     System.out.println("yeni şifreyi giriniz");
                     şifre=scan.nextLine();
-                    devam = true;
+
                 }
-                else System.out.println("yanlış şifre lutfen tekrar deneyin");  devam = true;
+                else System.out.println("yanlış şifre lutfen tekrar deneyin");
             }
+            if(işlem==6){
+                devam=true;
+            }
+            if(işlem==2){
+                System.out.println("lutfen yatırmak ıstediğin tutarı gir");
+                int tutar=scan.nextInt();
+                System.out.println("mevcut bakiye"+(tutar+bakiye));
+            }
+            if (işlem==1) System.out.println(bakiye);
         }
     }
 }
