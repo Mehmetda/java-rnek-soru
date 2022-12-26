@@ -15,7 +15,7 @@ public class C2 {
         Scanner scan=new Scanner(System.in);
         System.out.println("lutfen bır sıfre gırınız");
         String şifre=scan.nextLine();
-        if(şifre)
+
 
     }
 }
