@@ -12,10 +12,67 @@ public class C2 {
         //- Sifre buyuk harf icermelidir
         //- Sifre ozel karakter icermelidir
         //- Sifre en az 8 karakter olmalidir
-        Scanner scan=new Scanner(System.in);
-        System.out.println("lutfen bır sıfre gırınız");
-        String şifre=scan.nextLine();
+        int d=0;
+        boolean devam = true;
+        Scanner scan = new Scanner(System.in);
+        while (devam) {
+            System.out.println("lutfen bır sıfre gırınız");
+            String şifre = scan.nextLine();
+            int flag = 0;
+            for (int i = 0; i < şifre.length(); i++) {
+                if (şifre.charAt(i) >= 'a' && şifre.charAt(i) <= 'z') {
+                    break;
+                }
+                else flag++;
+            }
+
+            if (flag == şifre.length()) {
+                System.out.println("sıfre kucuk harf ıcermelıdır");
+                d++;
+            }
+
+           int a = 0;
+
+            for (int i = 0; i < şifre.length(); i++) {
+                if (şifre.charAt(i) >= 'A' && şifre.charAt(i) <= 'Z') {
+
+                    break;
+                }
+                else a++;
+
+            }
+            if (a == şifre.length()){
+                System.out.println("sıfre buyuk harf ıcermelıdır");
+                d++;
+            }
+
+             int b = 0;
+
+            for (int i = 0; i < şifre.length(); i++) {
+                if (şifre.charAt(i) >= '!' && şifre.charAt(i) <= '/') {
+
+                    break;
+                }
+                else
+                    b++;
+
+            }
+            if (b == şifre.length()) {
+                System.out.println("şifre ozel karakter ıcermelıdır");
+                d++;
+            }
 
 
+            if (şifre.length() < 8){
+                System.out.println("sıfre en az 8 karakter olmalıdır");
+                d++;
+            }
+
+           if( d==0){
+                System.out.println("başarılı bir şifre girdiniz");
+                devam=false;
+            }
+
+        }
     }
 }
